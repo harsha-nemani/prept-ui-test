@@ -1,0 +1,64 @@
+<div class="container">
+
+  <h1>Address</h1>
+
+  <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+
+    <div class="col-2">
+      <label for="userId">User ID:</label>
+      <input type="number" id="userId" formControlName="userId" class="form-control" name="userId">
+    </div>
+
+    <table class="table" formArrayName="addresses">
+      <tr>
+        <th colspan="1" id="1">
+          Add Multiple Addresses
+        </th>
+        <th id="2"><button type="button" (click)="addAddress()" class="btn btn-primary">Add Address</button></th>
+      </tr>
+      <tr *ngFor="let address of addresses().controls; let i=index" [formGroupName]="i">
+
+        <div class="card" style=" margin: 10px;">
+          <div class="card-header">
+            <label for="addressType">Address Type:</label>
+            <input type="text" id="addressType" formControlName="addressType" class="form-control" name="addressType">
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <label for="country">Country:</label>
+                  <input type="text" id="country" formControlName="country" class="form-control" name="country">
+
+                  <label for="city">City:</label>
+                  <input type="text" id="city" formControlName="city" class="form-control" name="city">
+
+                  <label for="house">House:</label>
+                  <input type="text" id="house" formControlName="house" class="form-control" name="house">
+                </div>
+                <div class="col">
+                  <label for="state">State:</label>
+                  <input type="text" id="state" formControlName="state" class="form-control" name="state">
+
+                  <label for="street">Street:</label>
+                  <input type="text" id="street" formControlName="street" class="form-control" name="street">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button (click)="removeAddress(i)" class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+      </tr>
+    </table>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+
+  <br/>
+  <!-- {{this.addressForm.value | json}} -->
+</div>
+
+
