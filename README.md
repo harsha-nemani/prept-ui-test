@@ -9,3 +9,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## NOTE:
 
 'src\app\address-form\address-form.component.ts' has the URL to which the submit button posts the addresses and mostly does not require to be changed.
+
+Image:
+![alt text](https://raw.githubusercontent.com/harsha-nemani/prept-ui-test/master/src/assets/sample.JPG)
